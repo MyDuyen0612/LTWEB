@@ -23,8 +23,10 @@
                         <th>Địa chỉ</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
-                        <th>Tổng số lượng</th>
                         <th>Tổng tiền</th>
+                        <th>Ngày đặt</th>
+                        <th>Tình trạng</th>
+                        <th>Hành động</th>
                       </tr>
                     </thead>
                     <tfoot>
@@ -35,8 +37,10 @@
                         <th>Địa chỉ</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
-                        <th>Tổng số lượng</th>
                         <th>Tổng tiền</th>
+                        <th>Ngày đặt</th>
+                        <th>Tình trạng</th>
+                        <th>Hành động</th>
                       </tr>
                       </tr>
                     </tfoot>
@@ -48,9 +52,11 @@
                         <td>{{$item->name}}</td>
                         <td>{{$item->diachi}}</td>
                         <td>{{$item->email}}</td>
-                        <td>{{$item->sdt}}</td>
-                        <td><a href="{{route('chitietdh',['id'=>$item->ma_hd])}}">{{$item->tongsl}}</a></td>         
+                        <td>{{$item->sdt}}</td>        
                         <td>{{number_format($item->tongtien)}} ₫</td>
+                        <td>{{$item->ngaytao}}</td>
+                        <td>{{($item->status)==0 ? "Chưa xử lý" : "Đã xử lý"}}</td>
+                        <td><a href="{{route('chitietdh',['id'=>$item->ma_hd])}}">Xem chi tiết</a></td>       
                       </tr>
                       @endforeach
                     </tbody>
@@ -59,10 +65,6 @@
               </div>
             </div>
 
-          </div>
-          <!-- /.container-fluid -->
-
         </div>
-        <!-- End of Main Content -->
-
+        <!-- /.container-fluid -->
 @endsection

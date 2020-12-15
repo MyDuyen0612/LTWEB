@@ -28,7 +28,7 @@ class SanphamController extends Controller
             'hinhanh.*'=>'image|mimes:jpeg,jpg,png,gif',
         ],[
             'hinhanh.*.image'=>"Không phải file hình",
-            'hinhanh.*.mimes'=>"duoi hinh jpeg,jpg,png,gif"
+            'hinhanh.*.mimes'=>"file hình là: jpeg,jpg,png,gif"
         ]);
        
         $idsanpham = DB::table('sanpham')->insertGetId([
