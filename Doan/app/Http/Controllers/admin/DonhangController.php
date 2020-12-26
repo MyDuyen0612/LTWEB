@@ -24,7 +24,8 @@ class DonhangController extends Controller
                 'chitiethoadon.soluong',
                 'chitiethoadon.dongia',
                 'hoadon.tongtien',
-                'hoadon.tongsl'
+                'hoadon.ngaytao',
+                'hoadon.status'
             )
             ->groupBy('hoadon.ma_hd')
             ->get();
@@ -32,8 +33,15 @@ class DonhangController extends Controller
             'donhang' => $donhang,
         ]);
     }
-    public function chitietdh($id)
+    public function chitietdh(Request $request, $id)
     {
+        if(isset($request->updatedh)){
+            DB::table('hoadon')
+            ->where('ma_hd','=',$id)
+            ->update([
+                'status' => $request->tt,
+            ]);
+        }
         $data = DB::table('chitiethoadon')
             ->join('sanpham', 'sanpham.ma_sp', '=', 'chitiethoadon.SANPHAMma_sp')
             ->where('chitiethoadon.HOADONma_hd', '=', $id)

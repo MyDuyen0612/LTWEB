@@ -10,10 +10,11 @@
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
               <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Thông tin đơn hàng</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Thông tin đơn hàng</h6>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
+                <form action="" method="GET">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr>
@@ -34,6 +35,12 @@
                       @endforeach
                     </tbody>
                   </table>
+                  <select name="tt">
+                    <option value="1">Đã xử lý</option>
+                    <option value="0">Chưa xử lý</option>
+                  </select>
+                  <input type="submit" value="Cập nhật đơn hàng" name="updatedh">
+                </form>  
                 </div>
               </div>
             </div>
@@ -41,7 +48,5 @@
           </div>
           <!-- /.container-fluid -->
 
-      
-        <!-- End of Main Content -->
-
+        </div>
 @endsection
