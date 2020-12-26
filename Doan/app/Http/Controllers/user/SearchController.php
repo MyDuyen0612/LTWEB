@@ -13,7 +13,6 @@ class SearchController extends Controller
         $nhasanxuat = DB::table('hangsx')->get();
         $danhmuc = DB::table('danhmuc')->get();
         $banner = DB::table('hinh')->where('tenhinh','=','banner_dell')->get();
-        
         $sanpham = DB::table('sanpham')
         ->join('hangsx','sanpham.HANGSXma_nhasanxuat','=','hangsx.ma_nhasanxuat')
         ->join('hinh','sanpham.ma_sp','=','hinh.SANPHAMma_sp')
@@ -34,6 +33,7 @@ class SearchController extends Controller
             'danhmuc'=> $danhmuc,
             'sanpham'=>$sanpham,
             'banner' => $banner,
+            'key' => $request->search
         ]);
     }
 }

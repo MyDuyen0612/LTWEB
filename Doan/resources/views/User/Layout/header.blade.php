@@ -17,7 +17,7 @@
                 <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                     <!-- Begin Header Middle Searchbox Area -->
                     <form action="{{url('search')}}" class="hm-searchbox" method="GET">
-                        <input type="text" placeholder="Nhập từ khóa tìm kiếm ..." name="search">
+                        <input type="text" placeholder="Nhập từ khóa tìm kiếm ..." name="search" value="{{$key??''}}">
                         <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                     <!-- Header Middle Searchbox Area End Here -->
