@@ -140,7 +140,6 @@
                         if ($button.hasClass('inc')) {
                         var newVal = parseFloat(oldValue) + 1;
                         } else {
-                            // Don't allow decrementing below zero
                         if (oldValue > 0) {
                             var newVal = parseFloat(oldValue) - 1;
                             } else {
@@ -167,7 +166,6 @@
                         if ($button.hasClass('inc')) {
                         var newVal = parseFloat(oldValue) + 1;
                         } else {
-                            // Don't allow decrementing below zero
                         if (oldValue > 0) {
                             var newVal = parseFloat(oldValue) - 1;
                             } else {
